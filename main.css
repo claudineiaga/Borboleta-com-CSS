@@ -1,0 +1,1031 @@
+
+:root {
+    --black: #000;
+    --pastel: #7dbdec;
+    --azulclaro: rgb(61, 133, 228);
+    --azul: #1b22df;
+  }
+  
+  *:before,
+  *:after {
+    position: absolute;
+    content: "";
+  }
+  
+  
+  body {
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(180deg, #e1e28d, #e6e3cb 85%, transparent 85%),
+      linear-gradient(
+        to top,
+        #0a190b 0%,
+        #255226 4%,
+        #8bc34a 14%,
+        #1e6f20b3 15%,
+        transparent 15%
+      );
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    perspective: 500vmin;
+  }
+  
+  body *,
+  *:before,
+  *:after {
+    box-sizing: border-box;
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+  }
+  
+  /*** BORBOLETA ***/
+  
+  .borboleta {
+    width: 80vmin;
+    height: 60vmin;
+  }
+  
+  .borboleta:hover {
+    border: 500vmin solid #ffcc0000;
+    animation: flyaway 10s 0s linear 1;
+  }
+  
+  @keyframes flyaway {
+    0% {
+      transform: rotateX(0deg) rotateZ(0deg) scale(1) translate3d(0, 0, 0);
+    }
+    18% {
+      transform: rotateX(20deg) rotateZ(-20deg) scale(0.7)
+        translate3d(-30vmin, -40vmin, 0);
+    }
+    35% {
+      transform: rotateX(30deg) rotateZ(10deg) scale(0.4)
+        translate3d(-30vmin, -80vmin, 0);
+    }
+    60% {
+      transform: rotateX(20deg) rotateZ(30deg) scale(0.2)
+        translate3d(100vmin, -130vmin, 0);
+    }
+    100% {
+      transform: rotateX(1deg) rotateZ(-3deg) scale(1) translate3d(0vmin, 0vmin, 0);
+    }
+  }
+  
+  .borboleta > * {
+    position: absolute;
+  }
+  
+  .cabeca {
+    background: radial-gradient(ellipse at 31% 39%, #fff 0.15vmin, #fff0 0.25vmin),
+      radial-gradient(ellipse at 65% 39%, #fff 0.15vmin, #fff0 0.25vmin),
+      radial-gradient(ellipse at 15% 45%, #fff 0.15vmin, #fff0 0.25vmin),
+      radial-gradient(ellipse at 85% 45%, #fff 0.15vmin, #fff0 0.25vmin),
+      radial-gradient(ellipse at 15% 50%, #fff 0.1vmin, #fff0 0.2vmin),
+      radial-gradient(ellipse at 85% 50%, #fff 0.1vmin, #fff0 0.2vmin),
+      radial-gradient(ellipse at 29% 68%, #fff 0.25vmin, #fff0 0.35vmin),
+      radial-gradient(ellipse at 71% 68%, #fff 0.25vmin, #fff0 0.35vmin),
+      radial-gradient(ellipse at 27% 62%, #fff 0.2vmin, #fff0 0.3vmin),
+      radial-gradient(ellipse at 73% 62%, #fff 0.2vmin, #fff0 0.3vmin), var(--black);
+    width: 4vmin;
+    height: 3vmin;
+    left: calc(50% - 2vmin);
+    top: calc(50% - 5vmin);
+    border-radius: 2vmin;
+    z-index: 2;
+  }
+  
+  .cabeca::before {
+    border: 0.35vmin solid transparent;
+    border-top: 0.5vmin solid #fff;
+    left: calc(50% - 0.4vmin);
+    top: 0.25vmin;
+  }
+  
+  .boca {
+    width: 100%;
+    height: 1.1vmin;
+    top: -0.85vmin;
+  }
+  
+  .boca::before,
+  .boca::after {
+    border: 0.25vmin solid var(--black);
+    height: 1vmin;
+    border-radius: 0 100% 0 75%;
+    width: 0.25vmin;
+    transform: rotate(30deg);
+    left: 1vmin;
+    background: linear-gradient(18deg, var(--black) 55%, #fff 65%);
+    box-shadow: 0 0 1px 1px var(--black) inset;
+  }
+  
+  .boca::after {
+    transform: rotate(-30deg);
+    left: 2.1vmin;
+    border-radius: 100% 0 75% 0;
+    background: linear-gradient(16deg, var(--black) 55%, #fff 65%);
+  }
+  
+  .e-antena,
+  .d-antena {
+    width: 0.25vmin;
+    height: 14vmin;
+    background: var(--black);
+    top: -12.5vmin;
+    transform: rotate(-32deg);
+    border-radius: 0 30% 30% 30%;
+    left: -2.5vmin;
+  }
+  
+  .d-antena {
+    top: -12.5vmin;
+    transform: rotate(30deg);
+    border-radius: 30% 0 30% 30%;
+    left: 6vmin;
+  }
+  
+  .e-antena:before,
+  .d-antena:before {
+    width: 0.85vmin;
+    height: 2vmin;
+    background: var(--black);
+    top: -1.75vmin;
+    border-radius: 0 100% 0% 100%;
+    left: -0.75vmin;
+    transform: rotate(-5deg);
+  }
+  
+  .d-antena:before {
+    transform: rotate(190deg);
+    left: 0.2vmin;
+    border-radius: 100% 0%;
+  }
+  
+  .e-antena:after,
+  .d-antena:after {
+    width: 0.15vmin;
+    height: 14vmin;
+    background: var(--black);
+    top: -0.5vmin;
+    transform: rotate(-1deg);
+    left: 0;
+  }
+  
+  .d-antena:after {
+    transform: rotate(1deg);
+    left: 0.15vmin;
+  }
+  
+  .corpo {
+    background: radial-gradient(
+        circle at -335% 50%,
+        var(--azul) 60%,
+        transparent 61%
+      ),
+      radial-gradient(circle at 435% 50%, var(--azul) 60%, transparent 61%),
+      var(--black);
+    width: 3vmin;
+    height: 23vmin;
+    left: calc(50% - 1.5vmin);
+    top: calc(50% - 3vmin);
+    border-radius: 1.5vmin 1.5vmin 150% 150%;
+    z-index: 1;
+  }
+  .corpo:before {
+    background: radial-gradient(ellipse at 10% 29%, #fff 0.15vmin, #fff0 0.25vmin),
+      radial-gradient(ellipse at 90% 29%, #fff 0.15vmin, #fff0 0.25vmin),
+      radial-gradient(circle at 90% 40%, #fff 0.15vmin, #fff0 0.25vmin),
+      radial-gradient(circle at 10% 40%, #fff 0.15vmin, #fff0 0.25vmin),
+      radial-gradient(circle at 90% 42%, #fff 0.1vmin, #fff0 0.2vmin),
+      radial-gradient(circle at 10% 42%, #fff 0.1vmin, #fff0 0.2vmin), var(--black);
+    width: 5vmin;
+    height: 10vmin;
+    left: calc(50% - 2.5vmin);
+    top: calc(50% - 12.5vmin);
+    border-radius: 70% 70% 100% 100%;
+  }
+  
+  .corpo span {
+    width: 3vmin;
+    height: 2vmin;
+    left: calc(50% - 1.5vmin);
+    top: calc(50% + 10vmin);
+    position: absolute;
+  }
+  .corpo span:before,
+  .corpo span:after {
+    background: var(--black);
+    width: 0.25vmin;
+    height: 2vmin;
+    left: calc(50% - 0.5vmin);
+    top: calc(50% - 0.75vmin);
+    border-radius: 40%;
+    transform: rotate(-10deg);
+  }
+  .corpo span:after {
+    left: calc(50% + 0.35vmin);
+    transform: rotate(10deg);
+  }
+  
+  /*** ASA SUPERIOR ***/
+  
+  .asa {
+    width: 35vmin;
+    height: 50vmin;
+    left: 3.5vmin;
+    top: 6vmin;
+    transform-origin: right center;
+  }
+  
+  .asa:before {
+    background: radial-gradient(circle at 43% 1%, #fff 0.25vmin, #fff0 0.375vmin),
+      radial-gradient(ellipse at 65% 18%, #fff 0.25vmin, #fff0 0.375vmin),
+      radial-gradient(circle at 60% 2%, #fff 0.25vmin, #fff0 0.375vmin),
+      radial-gradient(ellipse at 80% 40%, #fff 0.35vmin, #fff0 0.5vmin),
+      radial-gradient(ellipse at 90% 50%, #fff 0.25vmin, #fff0 0.375vmin),
+      radial-gradient(ellipse at 90% 53%, #fff 0.25vmin, #fff0 0.375vmin),
+      radial-gradient(ellipse at 90% 56%, #fff 0.25vmin, #fff0 0.375vmin),
+      var(--black);
+    width: 20%;
+    height: 21%;
+    border-radius: 24% 50% 0% 100%;
+    transform: rotate(-70deg) translate(2.25vmin, 0.35vmin);
+  }
+  
+  .asa > span:nth-child(1) {
+    background: 
+      
+      /*** white ***/ radial-gradient(
+        ellipse at 27% 31%,
+        #fff 0.4vmin,
+        #fff0 0.55vmin
+      ),
+      radial-gradient(circle at 28% 31%, #fff 0.25vmin, #fff0 0.4vmin),
+      radial-gradient(ellipse at 27% 34%, #fff 0.35vmin, #fff0 0.5vmin),
+      radial-gradient(ellipse at 38% 23%, #fff 0.4vmin, #fff0 0.55vmin),
+      radial-gradient(ellipse at 39% 27%, #fff 0.8vmin, #fff0 1vmin),
+      radial-gradient(ellipse at 52% 16%, #fff 0.25vmin, #fff0 0.4vmin),
+      radial-gradient(ellipse at 51% 16%, #fff 0.2vmin, #fff0 0.35vmin),
+      radial-gradient(ellipse at 18% 93%, #fff 0.65vmin, #fff0 0.8vmin),
+      radial-gradient(ellipse at 18% 93%, #fff 0.65vmin, #fff0 0.8vmin),
+      radial-gradient(circle at 10% 91%, #fff 0.5vmin, #fff0 0.65vmin),
+      radial-gradient(circle at 12% 83%, #fff 0.5vmin, #fff0 0.65vmin),
+      radial-gradient(circle at 12.9% 83.5%, #fff 0.35vmin, #fff0 0.5vmin),
+      radial-gradient(circle at 4.5% 86.5%, #fff 0.35vmin, #fff0 0.5vmin),
+      radial-gradient(circle at 6.5% 79.5%, #fff 0.35vmin, #fff0 0.5vmin),
+      radial-gradient(circle at 6.5% 77.5%, #fff 0.5vmin, #fff0 0.65vmin),
+      radial-gradient(circle at 2% 80%, #fff 0.35vmin, #fff0 0.5vmin),
+      radial-gradient(circle at 5.5% 70%, #fff 0.4vmin, #fff0 0.55vmin),
+      radial-gradient(circle at 6% 68.5%, #fff 0.3vmin, #fff0 0.45vmin),
+      radial-gradient(circle at 3.5% 65%, #fff 0.4vmin, #fff0 0.55vmin),
+      /***pastel***/
+        radial-gradient(ellipse at 36% 37%, var(--pastel) 0.8vmin, #fff0 1vmin),
+      radial-gradient(circle at 36.5% 36%, var(--pastel) 0.5vmin, #fff0 0.65vmin),
+      radial-gradient(circle at 37% 45%, var(--pastel) 0.7vmin, #fff0 0.875vmin),
+      radial-gradient(
+        ellipse at 35.5% 48.25%,
+        var(--pastel) 0.7vmin,
+        #fff0 0.875vmin
+      ),
+      radial-gradient(
+        circle at 35.25% 46.75%,
+        var(--pastel) 0.3vmin,
+        #fff0 0.45vmin
+      ),
+      radial-gradient(ellipse at 24% 44%, var(--pastel) 0.6vmin, #fff0 0.75vmin),
+      radial-gradient(ellipse at 23% 45%, var(--pastel) 0.6vmin, #fff0 0.75vmin),
+      radial-gradient(ellipse at 22.5% 46%, var(--pastel) 0.5vmin, #fff0 0.625vmin),
+      radial-gradient(circle at 25% 53%, var(--pastel) 0.8vmin, #fff0 0.9vmin),
+      radial-gradient(circle at 26.5% 51.5%, var(--pastel) 0.35vmin, #fff0 0.5vmin),
+      radial-gradient(circle at 26.5% 49.5%, var(--pastel) 0.35vmin, #fff0 0.5vmin),
+      radial-gradient(circle at 25.5% 50%, var(--pastel) 0.35vmin, #fff0 0.5vmin),
+      radial-gradient(
+        circle at 25.85% 72.75%,
+        var(--pastel) 1.05vmin,
+        #fff0 1.35vmin
+      ),
+      radial-gradient(circle at 25.25% 76.5%, var(--pastel) 0.5vmin, #fff0 0.75vmin),
+      radial-gradient(circle at 29.5% 86%, var(--pastel) 0.65vmin, #fff0 0.75vmin),
+      radial-gradient(circle at 30.75% 86%, var(--pastel) 0.35vmin, #fff0 0.5vmin),
+      radial-gradient(ellipse at 35.5% 88%, var(--pastel) 0.75vmin, #fff0 0.9vmin),
+      radial-gradient(ellipse at 19% 87%, var(--pastel) 0.65vmin, #fff0 0.825vmin),
+      radial-gradient(ellipse at 19% 86%, var(--pastel) 0.65vmin, #fff0 0.825vmin),
+      /*** azul ***/
+        radial-gradient(circle at 26% 73%, var(--azul) 1.5vmin, #fff0 1.75vmin),
+      radial-gradient(circle at 25% 79%, var(--azul) 0.75vmin, #fff0 0.95vmin),
+      radial-gradient(circle at 23.79% 76%, var(--azul) 0.65vmin, #fff0 0.85vmin),
+      radial-gradient(circle at 23.75% 79%, var(--azul) 0.65vmin, #fff0 0.85vmin),
+      radial-gradient(
+        circle at 25.75% 78.25%,
+        var(--azul) 0.65vmin,
+        #fff0 0.85vmin
+      ),
+      radial-gradient(
+        circle at 26.5% 78.15%,
+        var(--azul) 0.65vmin,
+        #fff0 0.85vmin
+      ),
+      radial-gradient(ellipse at 96% 18%, var(--azul) 0.65vmin, #fff0 0.825vmin),
+      radial-gradient(ellipse at 96% 19%, var(--azul) 0.65vmin, #fff0 0.825vmin),
+      radial-gradient(
+        ellipse at 96.25% 17.25%,
+        var(--azul) 0.625vmin,
+        #fff0 0.8vmin
+      ),
+      radial-gradient(circle at 96% 20.5%, var(--azul) 0.55vmin, #fff0 0.75vmin),
+      radial-gradient(circle at 96.1% 15%, var(--azul) 0.85vmin, #fff0 1vmin),
+      radial-gradient(ellipse at 95% 12%, var(--azul) 0.65vmin, #fff0 0.825vmin),
+      radial-gradient(
+        ellipse at 95.25% 13.65%,
+        var(--azul) 0.65vmin,
+        #fff0 0.825vmin
+      ),
+      radial-gradient(
+        ellipse at 93.25% 12.65%,
+        var(--azul) 0.65vmin,
+        #fff0 0.825vmin
+      ),
+      radial-gradient(
+        ellipse at 93.25% 15.65%,
+        var(--azul) 0.65vmin,
+        #fff0 0.825vmin
+      ),
+      var(--black);
+  
+    width: 110%;
+    height: 40%;
+    border-radius: 100% 10%;
+    transform: rotate(55deg) translate(2vmin, 4vmin);
+    z-index: 2;
+  }
+  
+  .asa > span:nth-child(1):before {
+    background: radial-gradient(
+        circle at 6.5% 10%,
+        var(--pastel) 0.65vmin,
+        #fff0 0.75vmin
+      ),
+      radial-gradient(circle at 7.35% 12%, var(--pastel) 0.6vmin, #fff0 0.7vmin),
+      radial-gradient(circle at 6.5% 10%, var(--azulclaro) 0.65vmin, #fff0 0.75vmin),
+      radial-gradient(circle at 5% 79%, #fff 0.65vmin, #fff0 0.8vmin),
+      radial-gradient(ellipse at 5% 79%, #fff 0.65vmin, #fff0 0.8vmin),
+      radial-gradient(ellipse at 11% 72%, #fff 0.65vmin, #fff0 0.8vmin),
+      radial-gradient(ellipse at 11% 73%, #fff 0.65vmin, #fff0 0.8vmin),
+      radial-gradient(ellipse at 11% 73%, #fff 0.65vmin, #fff0 0.8vmin),
+      radial-gradient(circle at 10% 47%, #fff 0.35vmin, #fff0 0.45vmin),
+      radial-gradient(circle at 10% 49%, #fff 0.35vmin, #fff0 0.45vmin),
+      radial-gradient(circle at 10% 51%, #fff 0.3vmin, #fff0 0.4vmin),
+      radial-gradient(circle at 10% 52%, #fff 0.25vmin, #fff0 0.25vmin),
+      radial-gradient(circle at 8% 33%, #fff 0.35vmin, #fff0 0.45vmin),
+      radial-gradient(circle at 7% 31%, #fff 0.35vmin, #fff0 0.45vmin), var(--black);
+    width: 60%;
+    height: 60%;
+    border-radius: 0 100% 0 48%;
+    transform: rotate(-54deg) translate(2vmin, 15.35vmin);
+  }
+  
+  .asa > span:nth-child(1):after {
+    background: radial-gradient(circle at 50% 4%, #fff 0.35vmin, #fff0 0.5vmin),
+      radial-gradient(circle at 62% 15%, #fff 0.35vmin, #fff0 0.5vmin),
+      radial-gradient(circle at 58% 18%, #fff 0.45vmin, #fff0 0.6vmin),
+      radial-gradient(circle at 63% 34%, #fff 0.35vmin, #fff0 0.5vmin),
+      radial-gradient(circle at 67% 31%, #fff 0.25vmin, #fff0 0.375vmin),
+      radial-gradient(circle at 56% 47%, #fff 0.35vmin, #fff0 0.5vmin),
+      radial-gradient(circle at 56% 50%, #fff 0.2vmin, #fff0 0.325vmin),
+      radial-gradient(circle at 53% 65%, #fff 0.3vmin, #fff0 0.45vmin),
+      radial-gradient(circle at 53% 66%, #fff 0.3vmin, #fff0 0.45vmin),
+      radial-gradient(circle at 53% 81%, #fff 0.5vmin, #fff0 0.65vmin),
+      radial-gradient(circle at 53% 78%, #fff 0.35vmin, #fff0 0.5vmin),
+      radial-gradient(circle at 53% 84%, #fff 0.375vmin, #fff0 0.475vmin),
+      radial-gradient(circle at 1% 6%, #fff 0.35vmin, #fff0 0.5vmin),
+      radial-gradient(circle at -3% 17%, #fff 0.5vmin, #fff0 0.65vmin),
+      radial-gradient(circle at -9% 32%, #fff 0.5vmin, #fff0 0.65vmin),
+      radial-gradient(circle at -20% 52%, #fff 0.85vmin, #fff0 1.05vmin),
+      radial-gradient(circle at -3% 68%, #fff 0.35vmin, #fff0 0.5vmin),
+      radial-gradient(circle at -5% 80%, #fff 0.65vmin, #fff0 0.8vmin),
+      radial-gradient(circle at -6% 84%, #fff 0.65vmin, #fff0 0.8vmin), var(--black);
+    width: 7%;
+    height: 70%;
+    border-radius: 0 100% 100% 100%;
+    transform: rotate(-71deg) translate(-8.6vmin, 17.35vmin);
+  }
+  
+  .asa > span:nth-child(1) > span:nth-child(1) {
+    width: 6vmin;
+    height: 3vmin;
+    border-radius: 100% 30%;
+    transform: rotate(-35deg);
+    top: 10.35vmin;
+    left: 2.5vmin;
+    background: linear-gradient(0deg, var(--azul) 30%, var(--azulclaro));
+    box-shadow: 0 0 3px 4px #040b4e inset, 0 0 1px 1px var(--black) inset;
+  }
+  
+  .asa > span:nth-child(1) > span:nth-child(2) {
+    width: 5.5vmin;
+    height: 2.05vmin;
+    border-radius: 50% 75%;
+    transform: rotate(-58deg);
+    top: 12.75vmin;
+    left: 4.5vmin;
+    background: linear-gradient(36deg, var(--azul) 30%, var(--azulclaro));
+    box-shadow: 0 0 2px 3px #040b4e inset, 0 0 1px 1px var(--black) inset;
+  }
+  
+  .asa > span:nth-child(1) > span:nth-child(3) {
+    width: 9.5vmin;
+    height: 4.5vmin;
+    border-radius: 80% 150% 50% 100%;
+    transform: rotate(-50deg);
+    top: 10vmin;
+    left: 11vmin;
+    background: radial-gradient(
+      ellipse at 36% 75%,
+      var(--azulclaro) 50%,
+      var(--azul) 65%
+    );
+    box-shadow: 0 0 1px 1px var(--black) inset;
+    border: 0.25vmin solid var(--black);
+    box-sizing: border-box;
+  }
+  
+  .asa > span:nth-child(1) > span:nth-child(4) {
+    width: 16.5vmin;
+    height: 4.5vmin;
+    border-radius: 80% 150% 50% 100%;
+    transform: rotate(-51deg);
+    top: 9.5vmin;
+    left: 13.15vmin;
+    background: radial-gradient(
+      ellipse at 36% 75%,
+      var(--azulclaro) 50%,
+      var(--azul) 65%
+    );
+    box-shadow: 0 0 1px 0px var(--black) inset;
+    border: 0.5vmin solid var(--black);
+    box-sizing: border-box;
+  }
+  
+  .asa > span:nth-child(1) > span:nth-child(5) {
+    width: 22.5vmin;
+    height: 6.5vmin;
+    border-radius: 80% 20%;
+    transform: rotate(-43deg);
+    top: 8.5vmin;
+    left: 16.5vmin;
+    background: radial-gradient(
+      ellipse at 36% 75%,
+      var(--azulclaro) 50%,
+      var(--azul) 65%
+    );
+    box-shadow: 0 0 1px 1px var(--black) inset;
+    border: 0.5vmin solid var(--black);
+    box-sizing: border-box;
+  }
+  
+  .asa > span:nth-child(1) > span:nth-child(6) {
+    width: 21vmin;
+    height: 6.25vmin;
+    border-radius: 150% 200% 150% 150%;
+    transform: rotate(-16deg);
+    top: 2vmin;
+    left: 15vmin;
+    background: radial-gradient(
+      ellipse at 36% 75%,
+      var(--azulclaro) 50%,
+      var(--azul) 60%
+    );
+    box-shadow: 0 0 1px 1px var(--black) inset;
+    border: 0.5vmin solid var(--black);
+    box-sizing: border-box;
+  }
+  
+  .asa > span:nth-child(1) > span:nth-child(3):before {
+    background: var(--azulclaro);
+    width: 5vmin;
+    height: 3.5vmin;
+    border-radius: 25% 100% 0% 40%;
+    transform: rotate(-10deg);
+    top: 1vmin;
+    left: 0.15vmin;
+  }
+  
+  .asa > span:nth-child(1) > span:nth-child(4):before {
+    background: var(--azulclaro);
+    width: 7vmin;
+    height: 3.5vmin;
+    border-radius: 20% 100% 0% 10%;
+    transform: rotate(-16deg);
+    top: 1vmin;
+    left: 0.15vmin;
+  }
+  
+  .asa > span:nth-child(1) > span:nth-child(5):before {
+    background: var(--azulclaro);
+    width: 10vmin;
+    height: 4.5vmin;
+    border-radius: 20% 100% 0% 50%;
+    transform: rotate(-16deg);
+    top: 2vmin;
+    left: 0.15vmin;
+  }
+  
+  .asa > span:nth-child(1) > span:nth-child(6):before {
+    width: 9vmin;
+    height: 2vmin;
+    border-radius: 20% 100%;
+    transform: rotate(-52deg);
+    top: 6vmin;
+    left: 12.75vmin;
+    background: radial-gradient(
+      ellipse at 36% 75%,
+      var(--azulclaro) 50%,
+      var(--azul) 60%
+    );
+    box-shadow: 0 0 1px 1px var(--black) inset;
+    border: 0.5vmin solid var(--black);
+    box-sizing: border-box;
+  }
+  
+  .asa > span:nth-child(1) > span:nth-child(6):after {
+    width: 13vmin;
+    height: 2vmin;
+    border-radius: 50% 100%;
+    transform: rotate(-44deg);
+    top: 8.9vmin;
+    left: 10.25vmin;
+    background: radial-gradient(
+      ellipse at 36% 75%,
+      var(--azulclaro) 50%,
+      var(--azul) 60%
+    );
+    box-shadow: 0 0 1px 1px var(--black) inset;
+    border: 0.5vmin solid var(--black);
+    box-sizing: border-box;
+  }
+  
+  .asa.esquerda {
+    transform: rotateY(0deg);
+    animation: iniciovoo 0.6s 0s ease-in-out 3;
+  }
+  
+  .borboleta:hover .asa.esquerda {
+    animation: voando 0.55s 0s ease-in-out 20;
+  }
+  
+  @keyframes voando {
+    0% {
+      transform: rotateY(0deg);
+    }
+    30% {
+      transform: rotateY(85deg);
+    }
+    75% {
+      transform: rotateY(-65deg);
+    }
+    100% {
+      transform: rotateY(0deg);
+    }
+  }
+  
+  @keyframes iniciovoo {
+    0% {
+      transform: rotateY(0deg);
+    }
+    30% {
+      transform: rotateY(85deg);
+    }
+    75% {
+      transform: rotateY(-65deg);
+    }
+    100% {
+      transform: rotateY(0deg);
+    }
+  }
+  
+  /*** ASA INFERIOR ***/
+  
+  .asa > span:nth-child(2) {
+    background: radial-gradient(
+        ellipse at 33.5% 11.5%,
+        #fff 0.25vmin,
+        #fff0 0.375vmin
+      ),
+      radial-gradient(ellipse at 30% 10.5%, #fff 0.25vmin, #fff0 0.375vmin),
+      radial-gradient(ellipse at 29% 10%, #fff 0.25vmin, #fff0 0.375vmin),
+      radial-gradient(ellipse at 28% 10%, #fff 0.2vmin, #fff0 0.3vmin),
+      radial-gradient(ellipse at 28% 10%, #fff 0.2vmin, #fff0 0.3vmin),
+      radial-gradient(ellipse at 22% 15%, #fff 0.5vmin, #fff0 0.65vmin),
+      radial-gradient(ellipse at 20.75% 16.05%, #fff 0.45vmin, #fff0 0.55vmin),
+      radial-gradient(ellipse at 19.75% 17.25%, #fff 0.4vmin, #fff0 0.5vmin),
+      radial-gradient(ellipse at 19% 18.5%, #fff 0.35vmin, #fff0 0.45vmin),
+      radial-gradient(ellipse at 18.5% 19.5%, #fff 0.25vmin, #fff0 0.35vmin),
+      radial-gradient(ellipse at 13% 21%, #fff 0.5vmin, #fff0 0.65vmin),
+      radial-gradient(ellipse at 13% 22%, #fff 0.5vmin, #fff0 0.65vmin),
+      radial-gradient(ellipse at 13% 23%, #fff 0.5vmin, #fff0 0.65vmin),
+      radial-gradient(ellipse at 17% 27%, #fff 0.5vmin, #fff0 0.65vmin),
+      radial-gradient(ellipse at 17% 28%, #fff 0.5vmin, #fff0 0.65vmin),
+      radial-gradient(ellipse at 17% 29%, #fff 0.5vmin, #fff0 0.65vmin),
+      radial-gradient(ellipse at 10% 30%, #fff 0.4vmin, #fff0 0.55vmin),
+      radial-gradient(ellipse at 9.75% 31%, #fff 0.4vmin, #fff0 0.55vmin),
+      radial-gradient(ellipse at 9.5% 32%, #fff 0.4vmin, #fff0 0.55vmin),
+      radial-gradient(ellipse at 9.15% 33%, #fff 0.3vmin, #fff0 0.45vmin),
+      radial-gradient(ellipse at 10.5% 40%, #fff 0.45vmin, #fff0 0.6vmin),
+      radial-gradient(circle at 10.5% 41%, #fff 0.45vmin, #fff0 0.6vmin),
+      radial-gradient(ellipse at 10.5% 43%, #fff 0.35vmin, #fff0 0.5vmin),
+      radial-gradient(ellipse at 11% 44%, #fff 0.35vmin, #fff0 0.5vmin),
+      radial-gradient(circle at 5% 47%, #fff 0.35vmin, #fff0 0.5vmin),
+      radial-gradient(circle at 5.5% 48.25%, #fff 0.25vmin, #fff0 0.4vmin),
+      radial-gradient(circle at 96.5% 31.25%, var(--azul) 1.25vmin, #fff0 1.5vmin),
+      radial-gradient(circle at 4% 29.5%, #fff 0.35vmin, #fff0 0.5vmin),
+      radial-gradient(circle at 3.5% 31.5%, #fff 0.25vmin, #fff0 0.375vmin),
+      radial-gradient(circle at 0% 47.5%, #fff 0.35vmin, #fff0 0.5vmin),
+      radial-gradient(circle at 0.15% 49.5%, #fff 0.25vmin, #fff0 0.375vmin),
+      radial-gradient(circle at -0.5% 57.5%, #fff 0.35vmin, #fff0 0.5vmin),
+      radial-gradient(circle at 0.15% 59.5%, #fff 0.25vmin, #fff0 0.375vmin),
+      radial-gradient(circle at 1% 69.5%, #fff 0.35vmin, #fff0 0.5vmin),
+      radial-gradient(circle at 1.5% 70.5%, #fff 0.25vmin, #fff0 0.375vmin),
+      var(--black);
+    width: 80%;
+    height: 40%;
+    border-radius: 90% 0% 100% 75%;
+    transform: rotate(-7deg) translate(5vmin, 25vmin);
+    z-index: 1;
+  }
+  
+  .asa > span:nth-child(2):before {
+    background: radial-gradient(circle at 2% 45%, #fff 0.5vmin, #fff0 0.65vmin),
+      radial-gradient(circle at 3% 47%, #fff 0.5vmin, #fff0 0.65vmin),
+      radial-gradient(circle at 12.5% 66%, #fff 0.5vmin, #fff0 0.65vmin),
+      radial-gradient(circle at 14% 68%, #fff 0.4vmin, #fff0 0.55vmin),
+      radial-gradient(circle at 23% 79%, #fff 0.5vmin, #fff0 0.65vmin),
+      radial-gradient(circle at 25% 81%, #fff 0.5vmin, #fff0 0.65vmin),
+      radial-gradient(ellipse at 38% 90.95%, #fff 0.5vmin, #fff0 0.615vmin),
+      radial-gradient(circle at 40.15% 91.5%, #fff 0.5vmin, #fff0 0.65vmin),
+      radial-gradient(circle at 37.25% 90%, #fff 0.5vmin, #fff0 0.65vmin),
+      radial-gradient(circle at 59.75% 99.25%, #fff 0.5vmin, #fff0 0.65vmin),
+      radial-gradient(ellipse at 62% 101.25%, #fff 0.5vmin, #fff0 0.65vmin),
+      radial-gradient(circle at 83% 102%, #fff 0.5vmin, #fff0 0.65vmin),
+      radial-gradient(circle at 80% 102%, #fff 0.5vmin, #fff0 0.65vmin),
+      radial-gradient(circle at 78% 102%, #fff 0.5vmin, #fff0 0.65vmin),
+      radial-gradient(ellipse at 10% 5%, #fff 0.5vmin, #fff0 0.7vmin),
+      radial-gradient(ellipse at 3% 13%, #fff 0.5vmin, #fff0 0.7vmin),
+      radial-gradient(ellipse at 8% 22%, #fff 0.5vmin, #fff0 0.7vmin),
+      radial-gradient(ellipse at 3% 28%, #fff 0.35vmin, #fff0 0.5vmin),
+      radial-gradient(ellipse at 3% 29%, #fff 0.35vmin, #fff0 0.5vmin),
+      radial-gradient(ellipse at 3% 30%, #fff 0.3vmin, #fff0 0.4vmin),
+      radial-gradient(ellipse at 3.5% 31%, #fff 0.25vmin, #fff0 0.4vmin),
+      radial-gradient(ellipse at 13% 32%, #fff 0.5vmin, #fff0 0.65vmin),
+      radial-gradient(ellipse at 14% 33%, #fff 0.5vmin, #fff0 0.65vmin),
+      radial-gradient(ellipse at 14.75% 35%, #fff 0.5vmin, #fff0 0.65vmin),
+      radial-gradient(ellipse at 7% 38%, #fff 0.35vmin, #fff0 0.5vmin),
+      radial-gradient(circle at 7.5% 39.5%, #fff 0.35vmin, #fff0 0.5vmin),
+      radial-gradient(ellipse at 8% 42%, #fff 0.2vmin, #fff0 0.35vmin),
+      radial-gradient(ellipse at 8.5% 43%, #fff 0.15vmin, #fff0 0.25vmin),
+      radial-gradient(ellipse at 18% 48%, #fff 0.5vmin, #fff0 0.65vmin),
+      radial-gradient(ellipse at 17% 47%, #fff 0.35vmin, #fff0 0.5vmin),
+      radial-gradient(ellipse at 19% 49.5%, #fff 0.3vmin, #fff0 0.45vmin),
+      radial-gradient(ellipse at 14% 58%, #fff 0.5vmin, #fff0 0.65vmin),
+      radial-gradient(ellipse at 15% 59%, #fff 0.5vmin, #fff0 0.65vmin),
+      radial-gradient(ellipse at 28% 58%, #fff 0.65vmin, #fff0 0.8vmin),
+      radial-gradient(ellipse at 26% 70%, #fff 0.35vmin, #fff0 0.5vmin),
+      radial-gradient(ellipse at 39% 67%, #fff 0.35vmin, #fff0 0.5vmin),
+      radial-gradient(ellipse at 39% 68.5%, #fff 0.35vmin, #fff0 0.5vmin),
+      radial-gradient(ellipse at 35% 80%, #fff 0.35vmin, #fff0 0.5vmin),
+      radial-gradient(ellipse at 36.5% 80%, #fff 0.25vmin, #fff0 0.4vmin),
+      radial-gradient(ellipse at 52% 75%, #fff 0.35vmin, #fff0 0.5vmin),
+      radial-gradient(ellipse at 47% 86%, #fff 0.35vmin, #fff0 0.5vmin),
+      radial-gradient(ellipse at 61% 76%, #fff 0.35vmin, #fff0 0.5vmin),
+      radial-gradient(ellipse at 58% 88%, #fff 0.35vmin, #fff0 0.5vmin),
+      radial-gradient(ellipse at 65% 90%, #fff 0.3vmin, #fff0 0.45vmin),
+      radial-gradient(ellipse at 68% 80%, #fff 0.35vmin, #fff0 0.5vmin),
+      radial-gradient(ellipse at 69% 81%, #fff 0.35vmin, #fff0 0.5vmin),
+      radial-gradient(ellipse at 70% 81%, #fff 0.35vmin, #fff0 0.5vmin),
+      radial-gradient(ellipse at 77% 93%, #fff 0.35vmin, #fff0 0.5vmin),
+      radial-gradient(ellipse at 75.5% 93%, #fff 0.3vmin, #fff0 0.4vmin),
+      radial-gradient(ellipse at 78.5% 93%, #fff 0.3vmin, #fff0 0.4vmin),
+      radial-gradient(ellipse at 84.5% 93%, #fff 0.3vmin, #fff0 0.4vmin),
+      radial-gradient(ellipse at 85.5% 93%, #fff 0.3vmin, #fff0 0.4vmin),
+      radial-gradient(ellipse at 90.5% 83%, #fff 0.85vmin, #fff0 1vmin),
+      radial-gradient(ellipse at 78.5% 83%, #fff 0.6vmin, #fff0 0.75vmin),
+      radial-gradient(circle at 89% 57%, var(--azulclaro) 3vmin, #fff0 3.15vmin),
+      radial-gradient(circle at 99% 66%, var(--azulclaro) 2vmin, #fff0 2.15vmin),
+      var(--black);
+    width: 19vmin;
+    height: 16vmin;
+    border-radius: 10% 100% 25% 100%;
+    top: 10vmin;
+    transform: rotate(2deg);
+    left: 1vmin;
+  }
+  
+  .asa > span:nth-child(2):after {
+    width: 5vmin;
+    height: 20vmin;
+    left: 20vmin;
+    transform: rotate(34deg);
+    top: 6vmin;
+    border-radius: 13%;
+    z-index: -1;
+    background: linear-gradient(-68deg, var(--black) 1.4vmin, transparent 1.5vmin),
+      radial-gradient(ellipse at 36% 75%, var(--azulclaro) 50%, var(--azul) 65%),
+      var(--black);
+    box-shadow: 0px -3px 1px 1px var(--black) inset;
+    border: 0.5vmin solid var(--black);
+    box-sizing: border-box;
+    border-top-color: var(--azul);
+  }
+  
+  .asa > span:nth-child(2) > span:nth-child(1) {
+    width: 19vmin;
+    height: 6vmin;
+    left: 9vmin;
+    top: 4vmin;
+    border-radius: 100% 0% 100% 5%;
+    transform: rotate(-17deg);
+    background: radial-gradient(
+      ellipse at 48% 100%,
+      var(--azulclaro) 55%,
+      var(--azul) 70%
+    );
+    box-shadow: 0 0 1px 1px var(--black) inset;
+    border: 0.5vmin solid var(--black);
+    box-sizing: border-box;
+    z-index: 1;
+  }
+  
+  .asa > span:nth-child(2) > span:nth-child(2) {
+    width: 22vmin;
+    height: 7vmin;
+    left: 9vmin;
+    top: 9vmin;
+    border-radius: 80% 100% 100% 100%;
+    transform: rotate(-53deg);
+    background: radial-gradient(circle at 42% 21%, var(--black) 5%, transparent 7%),
+      radial-gradient(circle at 40% 21%, var(--black) 4%, transparent 6%),
+      radial-gradient(circle at 44% 20%, var(--black) 4%, transparent 6%),
+      radial-gradient(ellipse at 36% 75%, var(--azulclaro) 50%, var(--azul) 65%);
+    box-shadow: 0 0 1px 1px var(--black) inset;
+    border: 0.5vmin solid var(--black);
+    box-sizing: border-box;
+    z-index: 0;
+  }
+  
+  .asa > span:nth-child(2) > span:nth-child(3) {
+    width: 14vmin;
+    height: 5vmin;
+    left: 6vmin;
+    top: 11.5vmin;
+    border-radius: 80% 100% 100% 90%;
+    transform: rotate(-53deg);
+    background: radial-gradient(
+      ellipse at 36% 75%,
+      var(--azulclaro) 50%,
+      var(--azul) 65%
+    );
+    box-shadow: 0 0 1px 1px var(--black) inset;
+    border: 0.5vmin solid var(--black);
+    box-sizing: border-box;
+  }
+  
+  .asa > span:nth-child(2) > span:nth-child(4) {
+    width: 9vmin;
+    height: 4.5vmin;
+    left: 3.75vmin;
+    top: 12vmin;
+    border-radius: 60% 100% 30% 90%;
+    transform: rotate(-59deg);
+    background: radial-gradient(
+      ellipse at 36% 75%,
+      var(--azulclaro) 50%,
+      var(--azul) 65%
+    );
+    box-shadow: 0 0 1px 1px var(--black) inset;
+    border: 0.5vmin solid var(--black);
+    box-sizing: border-box;
+  }
+  
+  .asa > span:nth-child(2) > span:nth-child(5) {
+    width: 11vmin;
+    height: 4.5vmin;
+    left: 2.95vmin;
+    top: 8.75vmin;
+    border-radius: 120% 150% 150% 80%;
+    transform: rotate(-27deg);
+    background: radial-gradient(
+      ellipse at 36% 75%,
+      var(--azulclaro) 50%,
+      var(--azul) 65%
+    );
+    box-shadow: 0 0 1px 1px var(--black) inset;
+    border: 0.5vmin solid var(--black);
+    box-sizing: border-box;
+  }
+  
+  .asa > span:nth-child(2) > span:nth-child(6) {
+    width: 11vmin;
+    height: 3.75vmin;
+    left: 4vmin;
+    top: 5.5vmin;
+    border-radius: 140% 150% 150% 100%;
+    transform: rotate(-27deg) skew(-34deg, 9deg);
+    background: radial-gradient(
+      ellipse at 36% 75%,
+      var(--azulclaro) 50%,
+      var(--azul) 65%
+    );
+    box-shadow: 0 0 1px 1px var(--black) inset;
+    border: 0.5vmin solid var(--black);
+    box-sizing: border-box;
+  }
+  
+  .asa > span:nth-child(2) > span:nth-child(2):before {
+    background: var(--azulclaro);
+    width: 7vmin;
+    height: 3.5vmin;
+    border-radius: 80% 100% 0% 30%;
+    transform: rotate(-15deg);
+    top: -1vmin;
+    left: -0.5vmin;
+  }
+  
+  .asa > span:nth-child(2) > span:nth-child(5):before {
+    width: 9vmin;
+    height: 3.5vmin;
+    border-radius: 80% 100% 0% 30%;
+    transform: rotate(10deg);
+    top: -1vmin;
+    left: 12vmin;
+    background: radial-gradient(
+      ellipse at 36% 75%,
+      var(--azulclaro) 50%,
+      var(--azul) 65%
+    );
+    box-shadow: 0 0 1px 1px var(--black) inset;
+    border: 0.5vmin solid var(--black);
+    box-sizing: border-box;
+  }
+  
+  .asa > span:nth-child(2) > span:nth-child(6):before {
+    width: 14vmin;
+    height: 3.5vmin;
+    border-radius: 100% 100% 10% 60%;
+    transform: rotate(2deg);
+    top: -3vmin;
+    left: 0.5vmin;
+    background: radial-gradient(
+      ellipse at 36% 75%,
+      var(--azulclaro) 50%,
+      var(--azul) 65%
+    );
+    box-shadow: 0 0 1px 1px var(--black) inset;
+    border: 0.5vmin solid var(--black);
+    box-sizing: border-box;
+  }
+  
+  .asa > span:nth-child(2) > span:nth-child(5):after {
+    width: 2vmin;
+    height: 2vmin;
+    border-radius: 100% 10% 10% 100%;
+    transform: rotate(10deg);
+    top: 1vmin;
+    left: -0.5vmin;
+    background: linear-gradient(-67deg, var(--azulclaro) 65%, var(--azul) 95%);
+  }
+  
+  .asa.direita {
+    transform: rotateY(180deg) translateX(-3vmin);
+    animation: flystart2 0.6s 0s ease-in-out 3;
+  }
+  
+  .borboleta:hover .asa.direita {
+    animation: flying2 0.55s 0s ease-in-out 20;
+  }
+  
+  @keyframes flying2 {
+    0% {
+      transform: rotateY(180deg) translateX(-3vmin);
+    }
+    30% {
+      transform: rotateY(95deg) translateX(-3vmin);
+    }
+    75% {
+      transform: rotateY(245deg) translateX(-3vmin);
+    }
+    100% {
+      transform: rotateY(180deg) translateX(-3vmin);
+    }
+  }
+  @keyframes flystart2 {
+    0% {
+      transform: rotateY(180deg) translateX(-3vmin);
+    }
+    30% {
+      transform: rotateY(95deg) translateX(-3vmin);
+    }
+    75% {
+      transform: rotateY(245deg) translateX(-3vmin);
+    }
+    100% {
+      transform: rotateY(180deg) translateX(-3vmin);
+    }
+  }
+  
+  /*** FLOR ***/
+  
+  .flor {
+    width: 12vmin;
+    height: 50vmin;
+    left: 48vw;
+    transform: rotate(-6deg);
+    transform-origin: center bottom;
+    top: 50%;
+    z-index: -1;
+  }
+  
+  .borboleta:hover + .flor {
+    animation: swing 2s ease 0s 1, swing 3.5s ease 2s 1, swing 5s ease 5.5s 1;
+  }
+  
+  @keyframes swing {
+    0% {
+      transform: rotate(-6deg);
+    }
+    60% {
+      transform: rotate(-4deg);
+    }
+    100% {
+      transform: rotate(-6deg);
+    }
+  }
+  
+  .tronco {
+    width: 40vmin;
+    height: 70vmin;
+    left: 2vmin;
+    border-radius: 100%;
+    border-left: 1.5vmin solid #36652c;
+  }
+  
+  .folhas:before,
+  .folhas:after {
+    content: "";
+    width: 8vmin;
+    height: 4vmin;
+    background: linear-gradient(45deg, #36652c, #5f923a);
+    border-radius: 100% 0;
+    top: 25vmin;
+  }
+  
+  .folhas:after {
+    left: -8.5vmin;
+    top: 22vmin;
+    transform: rotate(45deg);
+  }
+  
+  .petalas {
+    width: 12vmin;
+    height: 15vmin;
+    transform: rotate(53deg);
+    left: 10vmin;
+    top: -3vmin;
+  }
+  
+  .petalas:before,
+  .petalas:after {
+    content: "";
+    background: linear-gradient(0deg, #e36a57, #ee050d);
+    width: 13vmin;
+    height: 12vmin;
+    border-radius: 100% 0;
+    top: -2vmin;
+    left: 0vmin;
+    transform: rotate(-35deg);
+    border-top: 0.35vmin solid #f4739e;
+    z-index: 1;
+  }
+  
+  .petalas:after {
+    background: linear-gradient(0deg, #e36a57, #ee050d);
+    left: -5vmin;
+    transform: rotate(-65deg);
+    border-right: 0.5vmin solid #f4739e;
+    border-top: 0;
+  }
+  
+  .petalas span {
+    background: linear-gradient(0deg, #e36a57, #ee050d);
+    width: 10vmin;
+    height: 10vmin;
+    border-radius: 0 100%;
+    transform: rotate(43deg);
+    left: -1.5vmin;
+    top: -3vmin;
+    border-top: 2px solid #f4739e;
+  }
